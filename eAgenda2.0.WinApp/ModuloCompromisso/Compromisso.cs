@@ -75,5 +75,19 @@ namespace eAgenda2._0.WinApp.ModuloCompromisso
 
             return erros.ToArray();
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Compromisso compromisso &&
+                   id == compromisso.id &&
+                   assunto == compromisso.assunto &&
+                   data == compromisso.data &&
+                   horarioInicio.Equals(compromisso.horarioInicio) &&
+                   horarioFinal.Equals(compromisso.horarioFinal) &&
+                   EqualityComparer<Contato>.Default.Equals(contato, compromisso.contato) &&
+                   localPresencial == compromisso.localPresencial &&
+                   localOnline == compromisso.localOnline &&
+                   tipoLocal == compromisso.tipoLocal;
+        }
     }
 }
