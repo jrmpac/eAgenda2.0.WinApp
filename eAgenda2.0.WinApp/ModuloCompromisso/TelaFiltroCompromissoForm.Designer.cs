@@ -43,19 +43,18 @@
             // 
             btnFiltrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnFiltrar.DialogResult = DialogResult.OK;
-            btnFiltrar.Location = new Point(316, 317);
+            btnFiltrar.Location = new Point(111, 291);
             btnFiltrar.Name = "btnFiltrar";
             btnFiltrar.Size = new Size(82, 38);
             btnFiltrar.TabIndex = 0;
             btnFiltrar.Text = "Filtrar";
             btnFiltrar.UseVisualStyleBackColor = true;
-            btnFiltrar.Click += button1_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(404, 317);
+            btnCancelar.Location = new Point(199, 291);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(82, 38);
             btnCancelar.TabIndex = 1;
@@ -83,7 +82,6 @@
             rdbPassados.TabStop = true;
             rdbPassados.Text = "Visualizar Compromissos Passados";
             rdbPassados.UseVisualStyleBackColor = true;
-            rdbPassados.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // rdbFuturos
             // 
@@ -95,44 +93,49 @@
             rdbFuturos.TabStop = true;
             rdbFuturos.Text = "Visualizar Compromissos Futuros";
             rdbFuturos.UseVisualStyleBackColor = true;
+            rdbFuturos.CheckedChanged += rdbFuturos_CheckedChanged;
             // 
             // txtDataInicio
             // 
+            txtDataInicio.Enabled = false;
+            txtDataInicio.Format = DateTimePickerFormat.Short;
             txtDataInicio.Location = new Point(111, 163);
             txtDataInicio.Name = "txtDataInicio";
-            txtDataInicio.Size = new Size(200, 23);
+            txtDataInicio.Size = new Size(128, 23);
             txtDataInicio.TabIndex = 5;
             // 
             // txtDataFinal
             // 
+            txtDataFinal.Enabled = false;
+            txtDataFinal.Format = DateTimePickerFormat.Short;
             txtDataFinal.Location = new Point(111, 201);
             txtDataFinal.Name = "txtDataFinal";
-            txtDataFinal.Size = new Size(200, 23);
+            txtDataFinal.Size = new Size(128, 23);
             txtDataFinal.TabIndex = 6;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 167);
+            label1.Location = new Point(33, 169);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(68, 15);
             label1.TabIndex = 7;
-            label1.Text = "label1";
+            label1.Text = "Data Inicial:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(44, 207);
+            label2.Location = new Point(39, 207);
             label2.Name = "label2";
-            label2.Size = new Size(38, 15);
+            label2.Size = new Size(62, 15);
             label2.TabIndex = 8;
-            label2.Text = "label2";
+            label2.Text = "Data Final:";
             // 
             // TelaFiltroCompromissoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(498, 367);
+            ClientSize = new Size(293, 341);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtDataFinal);

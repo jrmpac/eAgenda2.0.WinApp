@@ -36,14 +36,11 @@ namespace eAgenda2._0.WinApp.ModuloCompromisso
             return txtDataFinal.Value;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void rdbFuturos_CheckedChanged(object sender, EventArgs e)
         {
-
+            txtDataInicio.Enabled = !txtDataInicio.Enabled;
+            txtDataFinal.Enabled = !txtDataFinal.Enabled;
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

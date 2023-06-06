@@ -5,8 +5,7 @@ namespace eAgenda2._0.WinApp.ModuloContato
 {
     public class Contato : EntidadeBase<Contato>
     {
-        public int id;
-        public string nome;
+        public string nome { get; set; }
         public string telefone;
         public string email;
         public string cargo;

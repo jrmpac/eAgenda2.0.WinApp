@@ -46,9 +46,8 @@
             txtLocalOnline = new TextBox();
             txtLocalPresencial = new TextBox();
             rdbPresencial = new RadioButton();
-            lblPresencial = new Label();
-            lblOnline = new Label();
             rdbOnline = new RadioButton();
+            chkSelecionarContato = new CheckBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -74,7 +73,7 @@
             // 
             txtAssunto.Location = new Point(74, 78);
             txtAssunto.Name = "txtAssunto";
-            txtAssunto.Size = new Size(323, 23);
+            txtAssunto.Size = new Size(401, 23);
             txtAssunto.TabIndex = 2;
             // 
             // lblAssunto
@@ -97,7 +96,7 @@
             // 
             // lblHorarioInicio
             // 
-            lblHorarioInicio.Location = new Point(12, 160);
+            lblHorarioInicio.Location = new Point(16, 153);
             lblHorarioInicio.Name = "lblHorarioInicio";
             lblHorarioInicio.Size = new Size(52, 41);
             lblHorarioInicio.TabIndex = 5;
@@ -107,30 +106,34 @@
             // txtData
             // 
             txtData.Format = DateTimePickerFormat.Short;
-            txtData.Location = new Point(74, 119);
+            txtData.Location = new Point(74, 113);
             txtData.Name = "txtData";
-            txtData.Size = new Size(121, 23);
+            txtData.Size = new Size(136, 23);
             txtData.TabIndex = 8;
             // 
             // txtHorarioInicio
             // 
-            txtHorarioInicio.Format = DateTimePickerFormat.Time;
+            txtHorarioInicio.CustomFormat = "HH:mm";
+            txtHorarioInicio.Format = DateTimePickerFormat.Custom;
             txtHorarioInicio.Location = new Point(74, 160);
             txtHorarioInicio.Name = "txtHorarioInicio";
-            txtHorarioInicio.Size = new Size(121, 23);
+            txtHorarioInicio.ShowUpDown = true;
+            txtHorarioInicio.Size = new Size(136, 23);
             txtHorarioInicio.TabIndex = 9;
             // 
             // txtHorarioFinal
             // 
-            txtHorarioFinal.Format = DateTimePickerFormat.Time;
-            txtHorarioFinal.Location = new Point(291, 160);
+            txtHorarioFinal.CustomFormat = "HH:mm";
+            txtHorarioFinal.Format = DateTimePickerFormat.Custom;
+            txtHorarioFinal.Location = new Point(329, 160);
             txtHorarioFinal.Name = "txtHorarioFinal";
+            txtHorarioFinal.ShowUpDown = true;
             txtHorarioFinal.Size = new Size(106, 23);
             txtHorarioFinal.TabIndex = 10;
             // 
             // lblHorarioFinal
             // 
-            lblHorarioFinal.Location = new Point(216, 160);
+            lblHorarioFinal.Location = new Point(257, 156);
             lblHorarioFinal.Name = "lblHorarioFinal";
             lblHorarioFinal.Size = new Size(66, 35);
             lblHorarioFinal.TabIndex = 11;
@@ -141,7 +144,7 @@
             // lblContato
             // 
             lblContato.AutoSize = true;
-            lblContato.Location = new Point(11, 204);
+            lblContato.Location = new Point(270, 218);
             lblContato.Name = "lblContato";
             lblContato.Size = new Size(53, 15);
             lblContato.TabIndex = 12;
@@ -149,10 +152,13 @@
             // 
             // cmbContatos
             // 
+            cmbContatos.DisplayMember = "nome";
+            cmbContatos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbContatos.Enabled = false;
             cmbContatos.FormattingEnabled = true;
-            cmbContatos.Location = new Point(74, 204);
+            cmbContatos.Location = new Point(329, 215);
             cmbContatos.Name = "cmbContatos";
-            cmbContatos.Size = new Size(121, 23);
+            cmbContatos.Size = new Size(146, 23);
             cmbContatos.TabIndex = 13;
             // 
             // btnCancelar
@@ -160,7 +166,7 @@
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.ImageAlign = ContentAlignment.BottomRight;
-            btnCancelar.Location = new Point(335, 443);
+            btnCancelar.Location = new Point(429, 461);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(74, 38);
             btnCancelar.TabIndex = 21;
@@ -171,7 +177,7 @@
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(255, 443);
+            btnGravar.Location = new Point(349, 461);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(74, 38);
             btnGravar.TabIndex = 22;
@@ -184,75 +190,70 @@
             groupBox1.Controls.Add(txtLocalOnline);
             groupBox1.Controls.Add(txtLocalPresencial);
             groupBox1.Controls.Add(rdbPresencial);
-            groupBox1.Controls.Add(lblPresencial);
-            groupBox1.Controls.Add(lblOnline);
             groupBox1.Controls.Add(rdbOnline);
-            groupBox1.Location = new Point(29, 243);
+            groupBox1.Location = new Point(30, 275);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(379, 184);
+            groupBox1.Size = new Size(484, 143);
             groupBox1.TabIndex = 24;
             groupBox1.TabStop = false;
             groupBox1.Text = "Tipo do Local";
             // 
             // txtLocalOnline
             // 
-            txtLocalOnline.Location = new Point(70, 84);
+            txtLocalOnline.Location = new Point(106, 84);
             txtLocalOnline.Name = "txtLocalOnline";
-            txtLocalOnline.Size = new Size(262, 23);
+            txtLocalOnline.Size = new Size(339, 23);
             txtLocalOnline.TabIndex = 23;
             // 
             // txtLocalPresencial
             // 
-            txtLocalPresencial.Location = new Point(70, 55);
+            txtLocalPresencial.Location = new Point(106, 55);
             txtLocalPresencial.Name = "txtLocalPresencial";
-            txtLocalPresencial.Size = new Size(262, 23);
+            txtLocalPresencial.Size = new Size(339, 23);
             txtLocalPresencial.TabIndex = 22;
             // 
             // rdbPresencial
             // 
             rdbPresencial.AutoSize = true;
-            rdbPresencial.Location = new Point(81, 30);
+            rdbPresencial.Location = new Point(22, 55);
             rdbPresencial.Name = "rdbPresencial";
             rdbPresencial.Size = new Size(78, 19);
             rdbPresencial.TabIndex = 14;
             rdbPresencial.TabStop = true;
             rdbPresencial.Text = "Presencial";
             rdbPresencial.UseVisualStyleBackColor = true;
-            // 
-            // lblPresencial
-            // 
-            lblPresencial.AutoSize = true;
-            lblPresencial.Location = new Point(1, 58);
-            lblPresencial.Name = "lblPresencial";
-            lblPresencial.Size = new Size(63, 15);
-            lblPresencial.TabIndex = 21;
-            lblPresencial.Text = "Presencial:";
-            // 
-            // lblOnline
-            // 
-            lblOnline.AutoSize = true;
-            lblOnline.Location = new Point(19, 87);
-            lblOnline.Name = "lblOnline";
-            lblOnline.Size = new Size(45, 15);
-            lblOnline.TabIndex = 20;
-            lblOnline.Text = "Online:";
+            rdbPresencial.CheckedChanged += rdbPresencial_CheckedChanged;
             // 
             // rdbOnline
             // 
             rdbOnline.AutoSize = true;
-            rdbOnline.Location = new Point(198, 30);
+            rdbOnline.Location = new Point(40, 84);
             rdbOnline.Name = "rdbOnline";
             rdbOnline.Size = new Size(60, 19);
             rdbOnline.TabIndex = 16;
             rdbOnline.TabStop = true;
             rdbOnline.Text = "Online";
             rdbOnline.UseVisualStyleBackColor = true;
+            rdbOnline.CheckedChanged += rdbOnline_CheckedChanged;
+            // 
+            // chkSelecionarContato
+            // 
+            chkSelecionarContato.AutoSize = true;
+            chkSelecionarContato.Location = new Point(24, 219);
+            chkSelecionarContato.Name = "chkSelecionarContato";
+            chkSelecionarContato.RightToLeft = RightToLeft.Yes;
+            chkSelecionarContato.Size = new Size(186, 19);
+            chkSelecionarContato.TabIndex = 25;
+            chkSelecionarContato.Text = "?Deseja selecionar um contato\r\n";
+            chkSelecionarContato.UseVisualStyleBackColor = true;
+            chkSelecionarContato.CheckedChanged += chkSelecionarContato_CheckedChanged;
             // 
             // TelaCompromissoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(432, 494);
+            ClientSize = new Size(526, 512);
+            Controls.Add(chkSelecionarContato);
             Controls.Add(groupBox1);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
@@ -301,8 +302,7 @@
         private TextBox txtLocalOnline;
         private TextBox txtLocalPresencial;
         private RadioButton rdbPresencial;
-        private Label lblPresencial;
-        private Label lblOnline;
         private RadioButton rdbOnline;
+        private CheckBox chkSelecionarContato;
     }
 }

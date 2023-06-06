@@ -11,7 +11,7 @@ namespace eAgenda2._0.WinApp.ModuloCompromisso
 
         public List<Compromisso> SelecionarCompromissosPassados(DateTime hoje)
         {
-            return listaRegistros.Where(x => x.data < hoje).ToList();
+            return listaRegistros.Where(x => x.data.Date < hoje.Date).ToList();
         }
 
         internal List<Compromisso> SelecionarCompromissosFuturos(DateTime dataInicio, DateTime dataFinal)
