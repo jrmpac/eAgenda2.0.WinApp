@@ -1,4 +1,3 @@
-using eAgenda2._0.WinApp.Compartilhado;
 using eAgenda2._0.WinApp.ModuloCompromisso;
 using eAgenda2._0.WinApp.ModuloContato;
 using eAgenda2._0.WinApp.ModuloTarefa;
@@ -10,6 +9,7 @@ namespace eAgenda2._0.WinApp
         private ControladorBase controlador;
         private RepositorioCompromisso repositorioCompromisso = new RepositorioCompromisso(new List<Compromisso>());
         private RepositorioContato repositorioContato = new RepositorioContato(new List<Contato>());
+        private RepositorioTarefa repositorioTarefa = new RepositorioTarefa(new List<Tarefa>());
 
 
         private static TelaPrincipalForm telaPrincipal;
@@ -49,7 +49,7 @@ namespace eAgenda2._0.WinApp
 
         private void tarefasMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTarefa();
+            controlador = new ControladorTarefa(repositorioTarefa);
 
             ConfigurarTelaPrincipal(controlador);
         }
@@ -104,6 +104,11 @@ namespace eAgenda2._0.WinApp
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
             controlador.Filtrar();
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            controlador.Adicionar();
         }
     }
 }

@@ -269,12 +269,7 @@
             Controls.Add(txtAssunto);
             Controls.Add(txtId);
             Controls.Add(lblId);
-            MaximizeBox = false;
-            MinimizeBox = false;
             Name = "TelaCompromissoForm";
-            ShowIcon = false;
-            ShowInTaskbar = false;
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Compromissos";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -25,6 +25,11 @@ namespace eAgenda2._0.WinApp.Compartilhado
 
         }
 
+        public virtual void Adicionar()
+        {
+
+        }
+
         public abstract UserControl ObterListagem();
 
         public abstract string ObterTipoCadastro();

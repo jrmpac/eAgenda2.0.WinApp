@@ -43,10 +43,12 @@
             btnEditar = new ToolStripButton();
             btnExcluir = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            labelTipoCadastro = new ToolStripLabel();
-            panelRegistros = new Panel();
             toolStripSeparator2 = new ToolStripSeparator();
             btnFiltrar = new ToolStripButton();
+            labelTipoCadastro = new ToolStripLabel();
+            panelRegistros = new Panel();
+            toolStripSeparator3 = new ToolStripSeparator();
+            btnAdicionar = new ToolStripButton();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -124,7 +126,7 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, toolStripSeparator2, btnFiltrar, labelTipoCadastro });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, btnFiltrar, toolStripSeparator3, btnAdicionar, toolStripSeparator2, labelTipoCadastro });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 45);
@@ -172,21 +174,6 @@
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 45);
             // 
-            // labelTipoCadastro
-            // 
-            labelTipoCadastro.Name = "labelTipoCadastro";
-            labelTipoCadastro.Size = new Size(77, 42);
-            labelTipoCadastro.Text = "TipoCadastro";
-            // 
-            // panelRegistros
-            // 
-            panelRegistros.BorderStyle = BorderStyle.FixedSingle;
-            panelRegistros.Dock = DockStyle.Fill;
-            panelRegistros.Location = new Point(0, 69);
-            panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(800, 359);
-            panelRegistros.TabIndex = 3;
-            // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
@@ -203,6 +190,38 @@
             btnFiltrar.Size = new Size(42, 42);
             btnFiltrar.Text = "Excluir";
             btnFiltrar.Click += btnFiltrar_Click;
+            // 
+            // labelTipoCadastro
+            // 
+            labelTipoCadastro.Name = "labelTipoCadastro";
+            labelTipoCadastro.Size = new Size(77, 42);
+            labelTipoCadastro.Text = "TipoCadastro";
+            // 
+            // panelRegistros
+            // 
+            panelRegistros.BorderStyle = BorderStyle.FixedSingle;
+            panelRegistros.Dock = DockStyle.Fill;
+            panelRegistros.Location = new Point(0, 69);
+            panelRegistros.Name = "panelRegistros";
+            panelRegistros.Size = new Size(800, 359);
+            panelRegistros.TabIndex = 3;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 45);
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnAdicionar.Image = Properties.Resources.library_add_FILL0_wght400_GRAD0_opsz24;
+            btnAdicionar.ImageScaling = ToolStripItemImageScaling.None;
+            btnAdicionar.ImageTransparentColor = Color.Magenta;
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Padding = new Padding(7);
+            btnAdicionar.Size = new Size(42, 42);
+            btnAdicionar.Text = "Excluir";
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // TelaPrincipalForm
             // 
@@ -249,5 +268,7 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripButton btnFiltrar;
+        private ToolStripButton btnAdicionar;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }

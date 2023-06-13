@@ -1,4 +1,5 @@
-﻿using eAgenda2._0.WinApp.ModuloContato;
+﻿using eAgenda2._0.WinApp.Compartilhado;
+using eAgenda2._0.WinApp.ModuloContato;
 
 namespace eAgenda2._0.WinApp.ModuloCompromisso
 {
@@ -8,6 +9,12 @@ namespace eAgenda2._0.WinApp.ModuloCompromisso
         {
             InitializeComponent();
 
+            this.ConfigurarDialog();
+            CarregarContatos(contatos);
+        }
+
+        private void CarregarContatos(List<Contato> contatos)
+        {
             foreach (Contato contato in contatos)
             {
                 cmbContatos.Items.Add(contato);
