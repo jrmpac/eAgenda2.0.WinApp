@@ -93,7 +93,53 @@ namespace eAgenda2._0.WinApp.ModuloTarefa
 
             TelaCadastroItensTarefaForm telaCadastroItensTarefa = new TelaCadastroItensTarefaForm(tarefaSelecionada);
 
-            telaCadastroItensTarefa.ShowDialog();
+            DialogResult opcaoEscolhida = telaCadastroItensTarefa.ShowDialog();
+
+            if(opcaoEscolhida == DialogResult.OK)
+            {
+                List<ItemTarefa> ItensParaAdicionar = telaCadastroItensTarefa.ObterItensCadastrados();
+
+                foreach (ItemTarefa item in ItensParaAdicionar)
+                {
+                    tarefaSelecionada.AdicionarItem(item);
+                }
+
+                repositorioTarefa.Editar(tarefaSelecionada.id, tarefaSelecionada);
+            }
+        }
+
+        public override void ConcluirItens()
+        {
+            Tarefa tarefaSelecionada = listagemTarefas.ObterTarefaSelecionada();
+
+            if (tarefaSelecionada == null)
+            {
+                MessageBox.Show("Selecione uma tarefa primeiro", "Atualização de Itens da Tarefa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            TelaAtualizacaoItensTarefaForm telaAtualizacaoItensTarefa = new TelaAtualizacaoItensTarefaForm(tarefaSelecionada);
+
+            DialogResult opcaoEscolhida = telaAtualizacaoItensTarefa.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                List<ItemTarefa> itensMarcados = telaAtualizacaoItensTarefa.ObterItensMarcados();
+
+                List<ItemTarefa> itensPendentes = telaAtualizacaoItensTarefa.ObterItensPendentes();
+
+                foreach (ItemTarefa item in itensMarcados)
+                {
+                    tarefaSelecionada.ConcluirItem(item);
+                }
+
+                foreach (ItemTarefa item in itensPendentes)
+                {
+                    tarefaSelecionada.DesmarcarItem(item);
+                }
+
+                repositorioTarefa.Editar(tarefaSelecionada.id, tarefaSelecionada);
+            }
         }
 
         public override UserControl ObterListagem()

@@ -1,6 +1,7 @@
 using eAgenda2._0.WinApp.ModuloCompromisso;
 using eAgenda2._0.WinApp.ModuloContato;
 using eAgenda2._0.WinApp.ModuloTarefa;
+using System.Windows.Forms;
 
 namespace eAgenda2._0.WinApp
 {
@@ -88,6 +89,11 @@ namespace eAgenda2._0.WinApp
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            if(controlador == null)
+            {
+                MessageBox.Show("Selecione uma categoria primeiro", "E-agenda", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             controlador.Inserir();
         }
 
@@ -109,6 +115,11 @@ namespace eAgenda2._0.WinApp
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             controlador.Adicionar();
+        }
+
+        private void btnConcluirItens_Click(object sender, EventArgs e)
+        {
+            controlador.ConcluirItens();
         }
     }
 }

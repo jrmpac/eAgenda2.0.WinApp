@@ -1,6 +1,6 @@
 ﻿namespace eAgenda2._0.WinApp.ModuloTarefa
 {
-    partial class TelaCadastroItensTarefaForm
+    partial class TelaAtualizacaoItensTarefaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,15 +34,12 @@
             label1 = new Label();
             btnCancelar = new Button();
             btnGravar = new Button();
-            listItems = new ListBox();
-            txtTituloItem = new TextBox();
-            label2 = new Label();
-            btnAdicionar = new Button();
+            listItensTarefa = new CheckedListBox();
             SuspendLayout();
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(85, 63);
+            txtTitulo.Location = new Point(63, 62);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.ReadOnly = true;
             txtTitulo.Size = new Size(480, 23);
@@ -51,7 +48,7 @@
             // Titulo
             // 
             Titulo.AutoSize = true;
-            Titulo.Location = new Point(34, 71);
+            Titulo.Location = new Point(12, 70);
             Titulo.Name = "Titulo";
             Titulo.Size = new Size(40, 15);
             Titulo.TabIndex = 13;
@@ -59,7 +56,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(85, 25);
+            txtId.Location = new Point(63, 24);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(77, 23);
@@ -69,7 +66,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(54, 33);
+            label1.Location = new Point(32, 32);
             label1.Name = "label1";
             label1.Size = new Size(20, 15);
             label1.TabIndex = 11;
@@ -79,7 +76,7 @@
             // 
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(493, 479);
+            btnCancelar.Location = new Point(472, 479);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 36);
             btnCancelar.TabIndex = 16;
@@ -90,65 +87,35 @@
             // 
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(412, 479);
+            btnGravar.Location = new Point(391, 479);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(75, 36);
             btnGravar.TabIndex = 15;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             // 
-            // listItems
+            // listItensTarefa
             // 
-            listItems.FormattingEnabled = true;
-            listItems.ItemHeight = 15;
-            listItems.Location = new Point(13, 157);
-            listItems.Name = "listItems";
-            listItems.Size = new Size(552, 304);
-            listItems.TabIndex = 17;
+            listItensTarefa.FormattingEnabled = true;
+            listItensTarefa.Location = new Point(12, 111);
+            listItensTarefa.Name = "listItensTarefa";
+            listItensTarefa.Size = new Size(534, 346);
+            listItensTarefa.TabIndex = 18;
             // 
-            // txtTituloItem
-            // 
-            txtTituloItem.Location = new Point(84, 106);
-            txtTituloItem.Name = "txtTituloItem";
-            txtTituloItem.Size = new Size(332, 23);
-            txtTituloItem.TabIndex = 19;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(13, 114);
-            label2.Name = "label2";
-            label2.Size = new Size(61, 15);
-            label2.TabIndex = 18;
-            label2.Text = "Descrição:";
-            // 
-            // btnAdicionar
-            // 
-            btnAdicionar.Location = new Point(437, 103);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(89, 27);
-            btnAdicionar.TabIndex = 20;
-            btnAdicionar.Text = "Adicionar";
-            btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += btnAdicionar_Click;
-            // 
-            // TelaCadastroItensTarefaForm
+            // TelaAtualizacaoItensTarefaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(580, 527);
-            Controls.Add(btnAdicionar);
-            Controls.Add(txtTituloItem);
-            Controls.Add(label2);
-            Controls.Add(listItems);
+            ClientSize = new Size(559, 527);
+            Controls.Add(listItensTarefa);
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);
             Controls.Add(txtTitulo);
             Controls.Add(Titulo);
             Controls.Add(txtId);
             Controls.Add(label1);
-            Name = "TelaCadastroItensTarefaForm";
-            Text = "Cadastro de Item da Tarefa";
+            Name = "TelaAtualizacaoItensTarefaForm";
+            Text = "Atualização de Itens da Tarefa";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,9 +128,6 @@
         private Label label1;
         private Button btnCancelar;
         private Button btnGravar;
-        private ListBox listItems;
-        private TextBox txtTituloItem;
-        private Label label2;
-        private Button btnAdicionar;
+        private CheckedListBox listItensTarefa;
     }
 }

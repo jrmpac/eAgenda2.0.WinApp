@@ -22,12 +22,14 @@ namespace eAgenda2._0.WinApp.Compartilhado
 
         public virtual void Filtrar()
         {
-
         }
 
         public virtual void Adicionar()
         {
+        }
 
+        public virtual void ConcluirItens()
+        {
         }
 
         public abstract UserControl ObterListagem();
