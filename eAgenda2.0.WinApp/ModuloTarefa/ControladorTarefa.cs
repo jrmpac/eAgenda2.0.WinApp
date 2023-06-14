@@ -139,6 +139,8 @@ namespace eAgenda2._0.WinApp.ModuloTarefa
                 }
 
                 repositorioTarefa.Editar(tarefaSelecionada.id, tarefaSelecionada);
+
+                CarregarTarefas();
             }
         }
 
@@ -159,9 +161,47 @@ namespace eAgenda2._0.WinApp.ModuloTarefa
             return "Cadastro de Tarefas";
         }
 
+        public override void Filtrar()
+        {
+            TelaFiltroTarefaForm telaFiltroTarefa = new TelaFiltroTarefaForm();
+
+            DialogResult opcaoEscolhida = telaFiltroTarefa.ShowDialog();
+
+            if(opcaoEscolhida == DialogResult.OK)
+            {
+                List<Tarefa> tarefas = null;
+
+                StatusTarefaEnum status = telaFiltroTarefa.ObterFiltroTarefa();
+
+                switch(status)
+                {                    
+                    case StatusTarefaEnum.Pendentes:
+                        tarefas = repositorioTarefa.SelecionarPendentes();
+                        break;
+
+                    case StatusTarefaEnum.Concluidas:
+                        tarefas = repositorioTarefa.SelecionarConcluidas();
+                        break;
+
+                    default:
+                        tarefas = repositorioTarefa.SelecionarTodosOrdenadosPorPrioridade();
+                        break;
+                }
+
+                CarregarTarefas(tarefas);
+
+            }
+        }
+        private void CarregarTarefas(List<Tarefa> tarefas)
+        {
+            listagemTarefas.AtualizarRegistros(tarefas);
+
+            TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {tarefas.Count} tarefa(s)");
+        }
+
         private void CarregarTarefas()
         {
-            List<Tarefa> tarefas = repositorioTarefa.SelecionarTodos();
+            List<Tarefa> tarefas = repositorioTarefa.SelecionarTodosOrdenadosPorPrioridade();
 
             listagemTarefas.AtualizarRegistros(tarefas);
 

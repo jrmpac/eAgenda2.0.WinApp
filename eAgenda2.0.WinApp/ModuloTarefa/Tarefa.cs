@@ -41,6 +41,7 @@ namespace eAgenda2._0.WinApp.ModuloTarefa
         public PrioridadeTarefaEnum prioridade;
         public DateTime dataCriacao;
         public List<ItemTarefa> items;
+        public decimal percentualConcluido;
 
         public Tarefa(int id, string titulo, PrioridadeTarefaEnum prioridade, DateTime dataCriacao)
         {
@@ -60,7 +61,7 @@ namespace eAgenda2._0.WinApp.ModuloTarefa
 
         public override string? ToString()
         {
-            return "Id: " + id + ", " + titulo + ", Prioridade: " + prioridade;
+            return "Id: " + id + ", " + titulo + ", Prioridade: " + prioridade + ", Percentual Concluído" + percentualConcluido;
         }
 
         public override string[] Validar()
@@ -78,13 +79,27 @@ namespace eAgenda2._0.WinApp.ModuloTarefa
             ItemTarefa itemSelecionado = items.FirstOrDefault(x => x.Equals(item));
 
             itemSelecionado.Concluir();
-        }
 
-        internal void DesmarcarItem(ItemTarefa item)
+            CalcularPercentualConcluido();
+        }
+        public void DesmarcarItem(ItemTarefa item)
         {
             ItemTarefa itemSelecionado = items.FirstOrDefault(x => x.Equals(item));
 
             itemSelecionado.Desmarcar();
+
+            CalcularPercentualConcluido();
+        }
+
+        private void CalcularPercentualConcluido()
+        {
+            decimal qtdConcluidos = items.Count(x => x.concluido == true);
+
+            decimal qtItens = items.Count();
+
+            decimal resultado = (qtdConcluidos / qtItens) * 100;
+
+            percentualConcluido = Math.Round(resultado, 2);
         }
     }
 }
